@@ -1,0 +1,18 @@
+Problema: 
+	Bool: String puede ser construido concatenando subcadenas de si mismo?
+Como tiene que ser totalmente generado por la subcadena entonces el primer caracter del String es el primero de la subcadena
+Clase String ya contiene metodo indexOf
+	Podemos entonces probar recursivamente con las subcadenas
+	Es decir, dada "12341234" vemos "1", buscamos la segunda vez que sucede "1"
+		De aqui generamos una subcadena del primer caracter al previo a la segunda aparicion del caracter
+		En este caso con indexOf('1',1) nos entrega un 4, por lo que sabemos que nuestra subcadena es de 4 caracteres
+
+
+	(Revisar por caso "11231123" despues)
+
+
+	Dado que sabemos el largo de nuestra subcadena podemos revisar si nuestra cadena permitiria esto checando si el largo de nuestra cadena es multiplo del largo de nuestra subcadena
+	Si lo eso, sigue siendo posible
+	Revisamos que tanto más larga es la cadena a la subcadena, n. En este caso n=2
+	Generamos una cadena auxiliar del mismo largo de la cadena original concatenando la subcadena n veces
+	subcadena*n==cadena=>true
